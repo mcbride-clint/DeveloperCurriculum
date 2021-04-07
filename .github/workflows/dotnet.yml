@@ -7,8 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  Build Sample App:
     runs-on: windows-latest
 
     steps:
@@ -19,8 +18,18 @@ jobs:
         dotnet-version: 5.0.x
     - name: Build
       run: dotnet build src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --configuration Release
+      
+  Test Sample App:  
+    runs-on: windows-latest
+    
+    steps:
     - name: Test
       run: dotnet test src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --no-build --verbosity normal
+      
+  Publish Sample App:  
+    runs-on: windows-latest
+  
+    steps:
     - name: Publish
       run: dotnet publish src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --configuration Release
     - name: Upload Sample App Build Artifact
