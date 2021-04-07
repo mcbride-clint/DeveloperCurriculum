@@ -19,6 +19,8 @@ jobs:
         dotnet-version: 5.0.x
     - name: Change Directory
       run: cd src/pipelines/SampleConsoleApp/
+    - name: List Files
+      run: dir
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
