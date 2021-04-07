@@ -21,10 +21,6 @@ jobs:
       run: dotnet clean src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --configuration Release && dotnet nuget locals all --clear
     - name: Restore dependencies
       run: dotnet restore src/pipelines/SampleConsoleApp/SampleConsoleApp.sln
-      inputs:
-          command: restore
-          projects: '$(serviceLocation)/**/*.csproj'
-          includeNuGetOrg: true
     - name: Build
       run: dotnet build src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --no-restore --configuration Release
     - name: Test
