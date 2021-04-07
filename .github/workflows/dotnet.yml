@@ -1,4 +1,4 @@
-name: .NET
+name: Sample Console App Build
 
 on:
   push:
