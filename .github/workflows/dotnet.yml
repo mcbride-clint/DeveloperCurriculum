@@ -17,13 +17,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Change Directory
-      run: cd src/pipelines/SampleConsoleApp/
-    - name: List Files
-      run: dir
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore src/pipelines/SampleConsoleApp/SampleConsoleApp.sln
     - name: Build
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --no-restore --configuration Release
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --no-build --verbosity normal
