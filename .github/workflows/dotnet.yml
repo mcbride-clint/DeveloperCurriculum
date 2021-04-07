@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  Build Sample App:
+  Build_Sample_App:
     runs-on: windows-latest
 
     steps:
@@ -19,14 +19,14 @@ jobs:
     - name: Build
       run: dotnet build src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --configuration Release
       
-  Test Sample App:  
+  Test_Sample_App:  
     runs-on: windows-latest
     
     steps:
     - name: Test
       run: dotnet test src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --no-build --verbosity normal
       
-  Publish Sample App:  
+  Publish_Sample_App:  
     runs-on: windows-latest
   
     steps:
