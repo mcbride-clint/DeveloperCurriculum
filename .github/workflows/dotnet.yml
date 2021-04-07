@@ -25,3 +25,5 @@ jobs:
       run: dotnet build src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --no-restore --configuration Release
     - name: Test
       run: dotnet test src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --no-build --verbosity normal
+    - name: Publish
+      run: dotnet publish src/pipelines/SampleConsoleApp/SampleConsoleApp.sln
