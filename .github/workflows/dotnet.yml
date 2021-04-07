@@ -12,10 +12,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET
+    - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    - name: Setup .NET Standard
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: netstandard2.0
     - name: Build
       run: dotnet build src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --configuration Release
     - name: Test
