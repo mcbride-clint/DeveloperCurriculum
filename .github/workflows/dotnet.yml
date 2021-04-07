@@ -21,7 +21,7 @@ jobs:
     - name: Test
       run: dotnet test src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --configuration Release
+      run: dotnet publish src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --configuration Release --self-contained
     - name: Upload Sample App Build Artifact
       uses: actions/upload-artifact@v2
       with:
