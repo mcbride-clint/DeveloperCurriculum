@@ -27,3 +27,8 @@ jobs:
       run: dotnet test src/pipelines/SampleConsoleApp/SampleConsoleApp.sln --no-build --verbosity normal
     - name: Publish
       run: dotnet publish src/pipelines/SampleConsoleApp/SampleConsoleApp.sln
+    - name: Upload Sampl App Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: SampleApp
+        path: /home/runner/work/DeveloperCurriculum/DeveloperCurriculum/src/pipelines/SampleConsoleApp/SampleConsoleApp/bin/Debug/netcoreapp3.1/publish/
