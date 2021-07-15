@@ -7,13 +7,19 @@ namespace NetCoreConsoleApp
     {
         static void Main(string[] args)
         {
-            ProceduralCodeSalesTaxCalculation();
-            ClassBasedSalesTaxCalculation();
+            decimal itemPrice;
+
+            Console.WriteLine("Please enter the item price:");
+            while (decimal.TryParse(Console.ReadLine(), out itemPrice) == false){
+                Console.WriteLine("Not a valid price. Please enter a price:");
+            }
+
+            ProceduralCodeSalesTaxCalculation(itemPrice);
+            ClassBasedSalesTaxCalculation(itemPrice);
         }
 
-        static void ProceduralCodeSalesTaxCalculation()
+        static void ProceduralCodeSalesTaxCalculation(decimal itemPrice)
         {
-            decimal itemPrice = 12.99m; // Declare price variable
             string county = "Allegheny";
 
             // Lookup our county to determin the tax rate
@@ -29,10 +35,9 @@ namespace NetCoreConsoleApp
             Console.WriteLine($"Procedural Code: Total Cost is $ {string.Format("{0:0.00}", salesTax + itemPrice)}"); // Output the total price formatted as a currency
         }
 
-        static void ClassBasedSalesTaxCalculation()
+        static void ClassBasedSalesTaxCalculation(decimal itemPrice)
         {
-            decimal itemPrice = 12.99m; // Declare price variable
-            PaCounty county = PaCounty.Westmoreland; // Set County
+            PaCounty county = PaCounty.Allegheny; // Set County
 
             var calcuatorProvider = new PaSalesTaxCalculatorProvider();
             ICalculateSalesTax calculator = calcuatorProvider.LoopkUp(county);
