@@ -11,9 +11,9 @@ namespace NetCoreConsoleApp
 
             var taxCalculator = new PaSalesTaxCalculator(); // Create a new instance of Sales Tax Calculator 
 
-            var salesTax = taxCalculator.CalculateTax(itemPrice); // Claculate the sales tax
+            var salesTax = taxCalculator.CalculateTax(itemPrice); // Calculate the sales tax
 
-            Console.WriteLine($"Total Cost is $ {string.Format("{0:0.##}", salesTax + itemPrice)}"); // Output the total price formatted as a currency
+            Console.WriteLine($"Total Cost is $ {string.Format("{0:0.00}", salesTax + itemPrice)}"); // Output the total price formatted as a currency
         }
     }
 }
