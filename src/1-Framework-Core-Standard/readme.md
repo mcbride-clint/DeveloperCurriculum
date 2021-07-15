@@ -1,4 +1,4 @@
-# 1 Framework vs. Core vs. Standard
+# 1 - Framework vs. Core vs. Standard
 
 In this Example there are the following three projects:
 
