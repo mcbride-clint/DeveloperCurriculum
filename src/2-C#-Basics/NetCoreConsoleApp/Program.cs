@@ -26,7 +26,7 @@ namespace NetCoreConsoleApp
 
             var salesTax = itemPrice * taxRate; // Calculate the sales tax
 
-            Console.WriteLine($"Bad Code: Total Cost is $ {string.Format("{0:0.00}", salesTax + itemPrice)}"); // Output the total price formatted as a currency
+            Console.WriteLine($"Procedural Code: Total Cost is $ {string.Format("{0:0.00}", salesTax + itemPrice)}"); // Output the total price formatted as a currency
         }
 
         static void ClassBasedSalesTaxCalculation()

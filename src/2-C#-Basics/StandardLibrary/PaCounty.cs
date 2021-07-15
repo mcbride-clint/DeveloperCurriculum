@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StandardLibrary
+﻿namespace StandardLibrary
 {
+    /// <summary>
+    /// Enumeration to track counties in Pennsylvania
+    /// </summary>
     public enum PaCounty
     {
         Allegheny,
