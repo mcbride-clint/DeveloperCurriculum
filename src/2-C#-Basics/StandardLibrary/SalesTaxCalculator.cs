@@ -1,23 +1,24 @@
 ﻿namespace StandardLibrary
 {
-    /// <summary>
-    /// Handles Pa Sales Tax Calculations
-    /// </summary>
-    public class PaSalesTaxCalculator
+    public abstract class SalesTaxCalculator : ICalculateSalesTax
     {
-        /// <summary>
-        /// Constant Tax Rate
-        /// </summary>
-        private readonly decimal _taxRate = 0.7m;
+        public SalesTaxCalculator(decimal taxRate)
+        {
+            _taxRate = taxRate;
+        }
+
+        public decimal _taxRate;
+        public decimal TaxRate { get => _taxRate; }
+
 
         /// <summary>
         /// Returns the tax needed for the product
         /// </summary>
-        /// <param name="totalPrice"></param>
+        /// <param name="itemPrice"></param>
         /// <returns></returns>
-        public decimal CalculateTax(decimal totalPrice)
+        public decimal CalculateTax(decimal itemPrice)
         {
-            return totalPrice * _taxRate;
+            return itemPrice * TaxRate;
         }
     }
 }
