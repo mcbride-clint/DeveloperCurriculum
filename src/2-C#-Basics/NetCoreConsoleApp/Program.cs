@@ -32,15 +32,14 @@ namespace NetCoreConsoleApp
         static void ClassBasedSalesTaxCalculation()
         {
             decimal itemPrice = 12.99m; // Declare price variable
-            County county = County.Westmoreland;
+            PaCounty county = PaCounty.Westmoreland; // Set County
 
-            var calcuatorProvider = new SalesTaxCalculatorProvider();
+            var calcuatorProvider = new PaSalesTaxCalculatorProvider();
             ICalculateSalesTax calculator = calcuatorProvider.LoopkUp(county);
 
             var salesTax = calculator.CalculateTax(itemPrice); // Calculate the sales tax
 
             Console.WriteLine($"Class Based Code: Total Cost is $ {string.Format("{0:0.00}", salesTax + itemPrice)}"); // Output the total price formatted as a currency
-
         }
     }
 }

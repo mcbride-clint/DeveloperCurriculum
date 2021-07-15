@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StandardLibrary
 {
-    public enum County
+    public enum PaCounty
     {
         Allegheny,
         Butler,
